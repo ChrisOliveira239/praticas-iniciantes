@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <STYLE>
+        #interaja{
+            font: normal 15px Arial;
+            background-color: blue;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+        </STYLE>
+    </head>
+    <body>
+        <div id="interaja" onclick="clicar()" onmouseout="fora()" onmouseover="dentro()">
+            interaja...
+            <script>
+                var clic = window.document.getElementById('interaja');
+                var clict = clic.innerText;
+                var clics = clic.style;
+
+                function clicar(){
+                    clic.innerText = 'clicou!';
+                    clics.backgroundColor ='red';
+                }
+                function fora(){
+                    clic.innerText= 'saiu!';
+                    clics.backgroundColor='blue';
+                }
+                function dentro(){
+                    clic.innerText = 'acima...';
+                    clics.backgroundColor ='green';
+                }
+            </script>
+        </div>
+    </body>
+</html>

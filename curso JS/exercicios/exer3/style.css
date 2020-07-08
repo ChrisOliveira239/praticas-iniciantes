@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(81, 145, 18);
+    font: normal 15px arial;
+    color: white;
+}
+
+header{
+    text-align: center;
+    text-shadow: 2px 2px 2px rgb(00,00,00,0.3);
+}
+
+section{
+    background-color: white;
+    color: black;
+    width: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    margin: auto;
+    box-shadow: 2px 2px 2px rgb(00,00,00,0.3);
+}
+
+section legend{
+    font-weight: bold;
+}
+
+section img{
+    display: block;
+    margin: auto;
+}
+
+section #txt{
+    text-align: center;
+    font: normal 20px Arial;
+}
+
+footer{
+    text-align: center;
+    font-style: italic;
+}

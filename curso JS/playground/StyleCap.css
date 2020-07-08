@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=MedievalSharp&display=swap');
+@font-face{
+    font-family: 'inicial';
+    src: url(Fonte/rosecaps.TTF)
+}
+body{
+    background: url(img/mapa.jpg) no-repeat ;
+    background-size: cover;
+}
+/*boas vindas */
+#cabeçalho{
+    width:77.5%;
+    height: 100px;
+    top: -20px;
+    left: 157px;
+    position: relative;
+    background: url(img/papel.jpg) no-repeat;
+    background-size: cover ;
+    border-bottom: 3px rgba(0,0,0,0.5) solid;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+    
+}
+#cabeçalho h1{
+    text-align: center;
+    position: relative;
+    top: 30%;
+}
+ #ico{
+    float: left;
+    position: relative;
+    background: crimson;
+    border-top-left-radius: 20px;
+}
+
+/*menu*/
+nav{
+   display: block;
+   float: left;
+   position: absolute;
+   left: -300px;
+   top: 100px;
+   width: 16%;
+   height:30px;
+   background:cornsilk;
+   border-radius: 0 20px 20px 0;
+   
+}
+nav:hover{
+    animation: gaveta 0.5s ease-out;
+    animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+
+
+nav ul{
+    position: relative;
+    list-style: none;
+    padding-top: 30px;
+    left: -30px;
+
+}
+
+nav li{
+    font-size: 20px;
+    background: rgb(230, 212, 212);
+    text-indent: 20px;
+    height: 30px;
+    transition-duration: 0.3s;
+    position: relative;
+}
+
+nav li:hover{
+    transition-duration: 0.3s;
+    background: rgb(103, 118, 255);
+}
+
+/*conteudo*/
+#conteudo{
+    width: 960px;
+    top: -30px;
+    left: 175px;
+    text-align: justify;
+    position: relative;
+    object-position: center;
+    padding: 20px;
+    background: url(img/alterPapel1.png) no-repeat;
+    background-size: cover;
+    border-radius: 0 0 20px 20px;
+    z-index: 1;
+    margin-bottom: -20px;
+}
+#texto{
+    padding: 20px 90px ;
+    width: 80%;
+    font-family: 'MedievalSharp', cursive;
+    font-weight: 300; 
+}
+.primeiro::first-letter{
+    float: left;
+    font-size: 150px;
+    font-family: 'inicial';
+    margin: -35px 0;
+    transition-duration: 1s; 
+}
+/*rodapé*/
+
+
+footer{
+    width:77.5%;
+    height: 100px;
+    top: -40px;
+    left: 157px;
+    position: relative;
+    background: url(img/papel.jpg) no-repeat;
+    background-size: cover ;
+    border-bottom: 3px rgba(0,0,0,0.5) solid;
+    border-radius: 0 0 20px 20px;
+    z-index: 2;
+    
+}
+footer p{
+    text-align: center;
+    vertical-align: middle;
+}
+@keyframes gaveta{
+
+    0%{transform: translateX(10px)}
+    50%{transform: translateX(70%)}
+  75%{height: 30px; transform: translateX(70%)}
+  100%{height: 300px;transform: translateX(70%);}
+    
+}

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Somando 1.1</title>
+        <style>
+        input{
+            width: 50px;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>somando valores</h1>
+        <input type="number" name="n1" id="n1">
+        <input type="number" name="n2" id="n2">
+        <input type="button" value="Somar" id="bot" onclick="somar()">
+        <p id="result">Resultado</p>
+        <script>
+                function somar(){
+                    var n1= document.getElementById('n1');
+                    var n2 = document.getElementById('n2');
+                    var result = document.getElementById('result');
+                    n1 = Number(n1.value);
+                    n2 = Number(n2.value);
+                    var soma = n1+n2;
+                   
+                    result.innerHTML = `o resultado de ${n1}+${n2} é igual a = ${soma}`;
+                }
+            </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+body{
+    background: rgb(83, 83, 83);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav ul{
+    list-style: none;
+    background: gray;
+    height: 60px;
+    vertical-align: center;
+
+}
+nav ul li{
+    display: inline;
+    vertical-align: center;
+    line-height: 60px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 15px 30px;
+    background: rgb(172, 172, 172);
+    vertical-align: center;
+    box-sizing: border-box;
+}
+nav ul li a img#icon{
+    transform: translateY(10px);
+}
+nav ul li a:hover{
+    border-bottom: red solid 2px;
+    padding-bottom: -3px;
+    background: rgb(201, 200, 200);
+    
+}

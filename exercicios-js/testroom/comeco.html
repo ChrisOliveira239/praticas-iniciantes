@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DANGER ROOM Nº1</title>
+</head>
+<body>
+    <fieldset style="width: fit-content;">
+        <legend>Testes</legend>
+        <input type="text" id="num1"><br>
+        <input type="text" id="num2"><br>
+        
+        <input type="button" value="Resto" onclick='resultado("resto")'>
+        <input type="button" value="Multi" onclick='resultado("multi")'>
+        <input type="button" value="Desconto" onclick='resultado("desc")'><br>
+       
+        <input type="text" id='nascimento' placeholder="dd/mm/aaaa" maxlength="8"><br>
+        <input type="button" value="Nacimento" onclick="idade()">
+
+        <fieldset>
+            <legend>resultado</legend>
+            <div id="res"></div>
+            <div id="qual"></div>
+        </fieldset>
+
+    </fieldset>
+
+    <script src="musculos.js"></script>
+</body>
+</html>

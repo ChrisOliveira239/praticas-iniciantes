@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+    color: white;
+
+}
+menu{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+menu ul{
+    background-color: violet;
+    margin: auto;
+    padding: 5px;
+    
+}
+menu ul li{
+    display: inline-block;
+    background-color: rgb(235, 180, 235);
+    text-align: center;
+    padding: 10px 5px;
+    margin: auto;
+}
+menu ul li:hover{
+    background-color: teal;
+    
+}

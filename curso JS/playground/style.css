@@ -1,0 +1,106 @@
+body{
+    background: url(img/mapa.jpg) no-repeat ;
+    background-size: cover;
+}
+/*boas vindas */
+#cabeçalho{
+    width:77.5%;
+    height: 100px;
+    top: -20px;
+    left: 157px;
+    position: relative;
+    background: url(img/papel.jpg) no-repeat;
+    background-size: cover ;
+    border-bottom: 3px rgba(0,0,0,0.5) solid;
+    border-radius: 20px 20px 0 0;
+    z-index: 2;
+}
+#cabeçalho h1{
+    text-align: center;
+    position: relative;
+    top: 30%;
+}
+ #ico{
+    float: left;
+    position: relative;
+    background: crimson;
+    border-top-left-radius: 20px;
+    
+}
+
+/*menu*/
+
+nav{
+   display: block;
+   float: left;
+   position: absolute;
+   left: -170px;
+   top: 100px;
+   width: 16%;
+   padding-bottom: 200px;
+   background:cornsilk;
+   border-radius: 0 20px 20px 0;
+}
+nav ul{
+    position: relative;
+    list-style: none;
+    padding-top: 30px;
+    left: -30px;
+
+}
+nav li{
+    margin-bottom: 15px;
+    font-size: 20px;
+    background: red;
+    text-indent: 20px;
+    transition-duration: 0.3s;
+   
+}
+nav li:hover{
+    transition-duration: 0.3s;
+    background: rgb(103, 118, 255)
+}
+
+
+#conteudo{
+    width: 960px;
+    top: -30px;
+    left: 175px;
+    text-align: justify;
+    position: relative;
+    object-position: center;
+    padding: 20px;
+    background: url(img/alterPapel1.png) no-repeat;
+    background-size: cover;
+    border-radius: 0 0 20px 20px;
+    z-index: 1;
+    margin-bottom: -20px;
+}
+#texto{
+    padding: 20px 90px ;
+    width: 80%;
+    
+}
+#texto h3{
+    text-align: center;
+    background-color:  rgba(0,0,0,0.2);
+}
+
+/*rodapé*/
+footer{
+    width:77.5%;
+    height: 100px;
+    top: -40px;
+    left: 157px;
+    position: relative;
+    background: url(img/papel.jpg) no-repeat;
+    background-size: cover ;
+    border-bottom: 3px rgba(0,0,0,0.5) solid;
+    border-radius: 0 0 20px 20px;
+    z-index: 2;
+    
+}
+footer p{
+    text-align: center;
+    vertical-align: middle;
+}
