@@ -1,0 +1,232 @@
+--------------------------------------------------------------------------
+int main(){
+    int contador=0,
+        numero=0,
+        max=0;
+    while(contador<50){
+        inicio:
+            printf("\ninsira um numero positivo: ");
+            scanf("%d", &numero);
+        if (numero<0){
+            printf("numero invalido, tente novamente");
+            goto inicio;
+        }
+        else{
+            if (numero>max){
+                max = numero;
+            }
+        }
+        contador++;
+    }
+    printf("maior numero : %d", max);
+    }
+int main(){
+    int contador = 1000;
+    while (contador<=1999){
+        if(contador%11==5){
+            printf("\nnumero divisivel = %d", contador);
+        }
+        contador++;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main(){
+    int escolha,
+        inter1=0,
+        inter2=0,
+        inter3=0;
+        while(escolha!=999){
+            printf("\n digite um numero, digite 999 para sair = ");
+            scanf("%d", &escolha);
+            if((escolha>=0)&&(escolha<=24)){
+               inter1++;
+               }
+            else{
+                if((escolha>=25)&&(escolha<=50)){
+                inter2++;
+               }
+               else{
+		if(escolha!=999){
+               	 inter3++;
+               }}}}
+        printf("\n entre 0 e 24 = %d", inter1);
+        printf("\n entre 25 e 50 = %d", inter2);
+        printf("\n fora do intrervalo = %d", inter3);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main(){
+int escolha, inter1=0, inter2=0, inter3=0, num1=0, num2=0, num3=0;
+        while(escolha!=999){
+            printf("\n digite um numero, digite 999 para sair = ");
+            scanf("%d", &escolha);
+
+            if((escolha>=0)&&(escolha<=24)){
+                num1+= escolha;
+                inter1++;
+               }
+            else{
+                if((escolha>=25)&&(escolha<=50)){
+                num2+=escolha;
+                inter2++;
+               }
+               else{
+                   if(escolha!=999){
+                    num3+=escolha;
+                    inter3++;
+            }}}}
+        printf("\n entre 0 e 24 = %d\nmedia = %d", inter1, (num1/inter1));
+        printf("\n entre 25 e 50 = %d\nmedia = %d", inter2, (num2/inter2));
+        printf("\n fora do intrervalo = %d\nmedia = %d", inter3,(num3/inter3));
+    }
+int main(){
+    int escolha,
+        numero = 1;
+    printf("escolha um numero para o fatorial");
+    scanf("%d", &escolha);
+        while(escolha>1){
+            numero *= escolha;
+            escolha--;
+        }
+    printf("\nfatorial = %d", numero);
+
+    }
+
+
+
+
+
+
+
+
+int main(){
+    int escolha,
+        sucessor;
+
+        while(escolha!=0){
+            printf("\nescolha um numero = ");
+            scanf("%d", &escolha);
+            if(escolha==0){
+                break;
+            }
+            else{
+                if(escolha%2==0){
+                sucessor=escolha+2;
+                }
+                else{
+                    sucessor=escolha+1;
+                }
+            }
+            printf("escolha = %d, sucessor = %d", escolha, sucessor);
+            }
+
+        }
+int main(){
+    int divisor = 1,
+        dividendo = 1,
+        resultado = 0;
+
+    while(divisor<=50){
+        resultado+=(divisor/dividendo);
+        printf("%d/%d \n",dividendo, divisor);
+        divisor++;
+        dividendo+=2;
+    }
+    printf("%f", resultado);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main(){
+    int result,
+        numN,
+        cont = 1;
+    printf("qual o valor de N = ");
+    scanf("%d", &numN);
+    while(cont<=numN){
+        printf("1/%d\n",cont);
+        result += 1/cont;
+        cont++;
+    }
+    printf("%d", result);
+
+
+}
+int main(){
+    float
+        num=0,
+        soma=0;
+    int
+        exp=1;
+
+    printf("defina um valor");
+    scanf("%f", &num);
+
+    while(exp<=20){
+        printf("1/%.0f^%d=", num, exp);
+        soma+=1/(pow(num,exp));
+        printf("%f\n", soma);
+        exp++;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
