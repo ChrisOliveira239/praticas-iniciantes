@@ -1,0 +1,331 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+//funções de analise dos numeros
+const char* milha(int n){
+
+    switch(n){
+        case 1000:
+            return "mil ";
+            break;
+        case 2000:
+            return "dois mil ";
+            break;
+        case 3000:
+            return "tres mil ";
+            break;
+        case 4000:
+            return "quatro mil ";
+            break;
+        case 5000:
+            return "cinco mil ";
+            break;
+        case 6000:
+            return "seis mil ";
+            break;
+        case 7000:
+            return "sete mil ";
+            break;
+        case 8000:
+            return "oito mil ";
+            break;
+        case 9000:
+            return "nove mil 2";
+            break;
+        default:
+            return "";
+            break;
+    }
+
+
+}
+
+const char* cente(int n){
+
+    switch(n){
+        case 100:
+            return "cento ";
+            break;
+        case 200:
+            return "duzentos ";
+            break;
+        case 300:
+            return "trezentos ";
+            break;
+        case 400:
+            return "quatrocentos ";
+            break;
+        case 500:
+            return "quinhentos ";
+            break;
+        case 600:
+            return "seiscentos ";
+            break;
+        case 700:
+            return "setecentos ";
+            break;
+        case 800:
+            return "oitocentos ";
+            break;
+        case 900:
+            return "novecentos ";
+            break;
+        default:
+            return "";
+            break;
+    }
+
+}
+
+const char* dezena(int n){
+
+        switch(n){
+            case 20:
+                return "vinte ";
+                break;
+            case 30:
+                return "trinta ";
+                break;
+            case 40:
+                return "quarenta ";
+                break;
+            case 50:
+                return "cinquenta ";
+                break;
+            case 60:
+                return "sessenta ";
+                break;
+            case 70:
+                return "setenta ";
+                break;
+            case 80:
+                return "oitenta ";
+                break;
+            case 90:
+                return "noventa ";
+                break;
+            default:
+                return "";
+                break;
+}}
+
+const char* dezenaMenor(int n){
+        switch(n){
+            case 10:
+                return "dez ";
+                break;
+            case 11:
+                return "onze ";
+                break;
+            case 12:
+                return "doze ";
+                break;
+            case 13:
+                return "treze ";
+                break;
+            case 14:
+                return "quatorze";
+                break;
+            case 15:
+                return "quinze";
+                break;
+            case 16:
+                return "desesseis";
+                break;
+            case 17:
+                return "dezessete";
+                break;
+            case 18:
+                return "dezoito";
+                break;
+            case 19:
+                return "dezenove";
+                break;
+            default:
+                return "";
+                break;
+        }
+
+}
+
+const char* unidade(int n){
+    switch(n){
+        case 1:
+            return "um";
+            break;
+        case 2:
+            return "dois";
+            break;
+        case 3:
+            return "tres";
+            break;
+        case 4:
+            return "quatro";
+            break;
+        case 5:
+            return "cinco";
+            break;
+        case 6:
+            return "seis";
+            break;
+        case 7:
+            return "sete";
+            break;
+        case 8:
+            return "oito";
+            break;
+        case 9:
+            return "nove";
+            break;
+        default:
+            return "";
+            break;
+
+}
+}
+
+
+//função de junção
+void analise(FILE *arquivo){
+        arquivo=fopen("lista.txt", "a");
+
+        float
+            numero=0;
+        int
+            uni=0,
+            numB=0;
+        char
+            extenso[100]="",
+            frase[10000]="";
+
+        printf("digite o Valor desejado com ponto = R$");
+        scanf("%f", &numero);
+
+
+        if(numero>=1000){
+            numB=numero-(int)numero%1000;   //milhar
+            strcat(extenso, milha(numB));
+            numero-=numB;
+            if((int)numero>0)
+                    strcat(extenso, "e ");
+        }
+        if(numero>=100){
+            if((int)numero==100){
+                strcat(extenso, "cem");
+            }
+            else{
+                numB=numero-(int)numero%100;    //centena
+                strcat(extenso,cente(numB));
+                numero-=numB;
+                if((int)numero>0)
+                    strcat(extenso, "e ");
+            }
+
+            }
+        if(numero>=20){
+            numB=numero-(int)numero%10;
+            strcat(extenso, dezena(numB));
+            numero-=numB;
+            if((int)numero>0)
+                    strcat(extenso, "e ");
+
+            numB=numero-(int)numero%1;      //unidade
+            strcat(extenso, unidade(numB));
+            numero-=numB;
+
+            }else{
+                if(numero>=10){
+                    strcat(extenso, dezenaMenor((int)numero));
+                    numero-=(int)numero;
+                }else{
+                    strcat(extenso, unidade((int)numero));
+                    numero-=(int)numero;
+            }
+        }
+
+        strcat(extenso, " reais");
+
+
+        //conversão de centavos
+        numero*=100;
+        numB=numero*10;
+        if(numB%10==9)
+            numero++;
+
+        if(numero>=20){
+            strcat(extenso, " e ");
+            numB=numero-(int)numero%10;
+            strcat(extenso, dezena(numB));
+            numero-=numB;
+            if((int)numero>0)
+                    strcat(extenso, "e ");
+
+            numB=numero-(int)numero%1;      //unidade
+            strcat(extenso, unidade(numB));
+            numero-=numB;
+            strcat(extenso, " centavos");
+            }else{
+                if(numero>=10){
+                    strcat(extenso, " e ");
+                    strcat(extenso, dezenaMenor((int)numero));
+                    numero-=numB;
+                    numB=numero-(int)numero%10;
+                    strcat(extenso, " centavos");
+                }else{
+                    if(numero!=0){
+                        strcat(extenso, " e ");
+                        strcat(extenso, unidade((int)numero));
+                        strcat(extenso, " centavos");
+            }}
+        }
+        strcat(extenso, "\n");
+        printf("\n%s", extenso);
+        fprintf(arquivo, extenso);
+        fclose(arquivo);
+
+
+    }
+
+
+
+int main(){
+
+    char
+        frase[10000]="";
+
+    int
+        opc=0;
+
+        FILE*arquivo;
+        arquivo = fopen("lista.txt", "w");
+        fclose(arquivo);
+
+
+    do{
+        printf("\nDigite a opcao desejada: ");
+        printf("\n1-Adicionar um numero a lista\n2-Ler todos os numeros da Lista\n3-Sair do programa\n");
+        scanf("%d", &opc);
+
+        switch(opc){
+            case 1:
+                analise(arquivo);
+                break;
+            case 2:
+                arquivo=fopen("lista.txt", "r");
+                while(fgets(frase, 1000, arquivo)!=NULL){
+                printf("%s",frase);
+                }
+
+                break;
+            case 3:
+                printf("Saindo...");
+                system("pause");
+                break;
+            default:
+                printf("opcao invalida, tente novamente");
+        }
+    }while(opc!=3);
+
+    fclose(arquivo);
+}
