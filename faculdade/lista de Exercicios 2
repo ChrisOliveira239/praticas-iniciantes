@@ -1,0 +1,189 @@
+1.	Escreva um programa para ler, calcular e escrever amédia aritméticaentre dois números:
+
+int main(){
+    int n1,
+        n2;
+    printf("digite dois numeros para obter sua media  : ");
+    scanf("%d", &n1);
+    scanf("%d", &n2);
+    printf("a media entre %d e %d = %d",n1,n2,(n1+n2)/2);
+
+    return 0;
+    }
+
+/*------------------------------------------------------------------------------------------------------------------
+2. Faça um programa para ler dois valores (x e y), calcular e mostrar x elevado àpotência de y.
+--------------------------------------------------------------------------------------------------------------------*/
+int main(){
+    int n1,
+        n2,
+        exp;
+
+    printf("digite dois numeros para obter seu exponencial  : ");
+    scanf("%d", &n1);
+    scanf("%d", &n2);
+    exp = pow(n1, n2);
+    printf("%d elevado a %d = %d",n1,n2,exp);
+
+    return 0;
+    }
+
+/*------------------------------------------------------------------------------------------------------------------
+3. Faça um programa que leia dois números reais e em seguida mostre: a soma, oproduto, a divisão e a subtração entre eles.
+--------------------------------------------------------------------------------------------------------------------*/
+int main(){
+    float n1,
+        n2;
+    printf("digite dois numeros para obter soma, divisao, produto e subtracao  : ");
+    scanf("%f", &n1);
+    scanf("%f", &n2);
+    printf("soma = %f\nproduto = %f\ndivisao = %f\nsubtracao = %f\n",n1+n2, n1*n2, n1/n2,n1-n2);
+    return 0;
+    }
+
+
+/*------------------------------------------------------------------------------------------------------------------
+ Faça um programa no qual o usuário fornece os valores de temperatura em Fahrenheite o mesmo converte os valores para
+  Celsius Apresente o resultado. (pesquise a fórmula)
+--------------------------------------------------------------------------------------------------------------------*/
+
+int main(){
+    float n1;
+
+    printf("de farenheit para celcius  : ");
+    scanf("%f", &n1);
+    printf("%.2f graus Farenheit sao %.2f graus celcius ", n1, (n1-32)/1.8);
+    return 0;
+    }
+
+/*------------------------------------------------------------------------------------------------------------------
+ 5. Elaborar um programa que calcule e apresente o volume de uma caixa retangular, por meio da fórmula:
+VOLUME = COMPRIMENTO * LARGURA * ALTURA
+--------------------------------------------------------------------------------------------------------------------*/
+
+int main(){
+    float   comp,
+            larg,
+            alt;
+
+    printf("o programa a seguir apresenta o volume de uma caixa\n");
+    printf("digite comprimento, largura e altura respectivamente\n");
+    scanf("%f", &comp);
+    scanf("%f", &larg);
+    scanf("%f", &alt);
+    printf("o volume apresentado e de = %.0f", comp*alt*larg);
+
+    return 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------
+6. Elaborar um programa para efetuar o cálculo do valor de uma prestação em atraso,utilizando a fórmula:
+PRESTACAO = VALOR + (VALOR*(TAXA/100)*TEMPO)
+--------------------------------------------------------------------------------------------------------------------*/
+int main(){
+    float   val,
+            tax,
+            temp;
+
+    printf("o programa a seguir calcula a taxa de uma prestacao atrasada : \n");
+    printf("digite o valor do produto: \n");
+    scanf("%f", &val);
+    printf("digite a taxa a ser aplicada e o tempo em debito, respectivamente = \n");
+    scanf("%f", &tax);
+    scanf("%f", &temp);
+    printf("o valor apresentado e de = R$%.2f",val+(val*(tax/100)*temp) );
+
+    return 0;
+    }
+
+/*------------------------------------------------------------------------------------------------------------------
+7. Faça um programa para ler um valor (olado de um quadrado), calcular e mostrar arespectiva área do quadrado.
+--------------------------------------------------------------------------------------------------------------------*/
+int main(){
+    int lado;
+    printf("o programa a seguir calcula a area de um quadrado : \n");
+    printf("digite o tamanho de um dos lados: \n");
+    scanf("%d", &lado);
+    printf("a area do quadrado e de = %d M2", lado*lado);
+
+    return 0;
+    }
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------
+8. Sabendo que a área de um triângulo é a medida da sua base multiplicada pela medidade sua altura dividida por dois.
+ Escreva um programa que peça os valores da basee da altura e forneça a área do triângulo.
+--------------------------------------------------------------------------------------------------------------------*/
+int main(){
+    int base,
+        altura;
+
+    printf("o programa a seguir calcula a area de um triangulo : \n");
+    printf("digite o tamanho de base e altura respectivamente : \n");
+    scanf("%d", &base);
+    scanf("%d", &altura);
+    printf("area do triangulo = %d", (base*altura)/2);
+
+    return 0;
+    }
+/*------------------------------------------------------------------------------------------------------------------
+9. Faça um programa para ler dois valores (altura e raio de um cilindro), calcular emostrar o respectivo volume do
+ cilindro. (pesquise a fórmula)
+--------------------------------------------------------------------------------------------------------------------*/
+
+
+int main(){
+    float raio,
+        altura;
+
+
+
+    printf("o programa a seguir calcula o volume de um cilindro : \n");
+    printf("digite o tamanho de raio e altura respectivamente : \n");
+    scanf("%f", &raio);
+    scanf("%f", &altura);
+    printf("volume do cilindro = %.1f", 3.14*(raio*2)*altura );
+
+    return 0;
+    }
+
+
+
+/*------------------------------------------------------------------------------------------------------------------
+10. Escrever um programa para ler 4 valores, calcular e mostrar a média ponderadaobtida por um aluno para 2 notas bimestrais. 
+--------------------------------------------------------------------------------------------------------------------*/
+int main(){
+    float
+        nota1,
+        peso1,
+        nota2,
+        peso2;
+    printf("o programa a seguir calcula a nota ponderada de 2 notas bimestrais : \n");
+    printf("digite a primeira nota e peso respectivamente \n");
+    scanf("%f", &nota1);
+    scanf("%f", &peso1);
+    printf("digite a segunda nota e peso respectivamente \n");
+    scanf("%f", &nota2);
+    scanf("%f", &peso2);
+    printf("a nota ponderada e = %.1f",((nota1*peso1)+(nota2*peso2))/(peso1+peso2));
+
+    return 0;
+    }
