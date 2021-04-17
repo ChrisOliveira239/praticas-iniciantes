@@ -1,0 +1,128 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+
+    void inicio(){
+        printf("\n\n--------retornando ao programa inicial-------");
+                }
+    int rtrn(int numA, int numB){
+
+        /*o comando return tem como objetivo retornar outra função ou valor solicitado.
+        o valor pode ser qualquer tipo de variável(int, float, char, etc) e caso não seja
+        definido na declaração da função, o compilador tomará como padrão o retorno de INT.
+        ao ser executado, o comando return encerra a função automaticamente.*/
+
+        return numA+numB;
+        }
+    void gt(){
+
+        /*
+        A função GOTO tem como objetivo ir a um ponto predeterminado
+        pelo desenvolvedor, desviando ou retrocedendo dentro das
+        linhas do código
+         */
+
+        int nume;
+        inicio:
+            printf("\n----Esta mensagem marca o inicio do programa----");
+
+        printf("\nCaso voce digite 1, algumas linhas nao serao executadas");
+        printf("\nCaso digite 2, o programa mostrara novamente as primeiras mensagens\n");
+        scanf("%d", &nume);
+
+        if(nume==1){
+            goto fim;
+        }
+        if(nume==2){
+            goto inicio;
+        }
+        printf("\n-Esta linha nao apareceria");
+        printf("\n-Nem esta");
+        printf("\n-Nem esta");
+        fim:
+            printf("\n------Apenas esta linha estaria disponivel------");
+            }
+    void brkCtn(){
+
+        /*
+        ---- os break e continue tem funçoes similares dentro de um laço,
+        enquanto a função break tem como objetivo a interrupção imediata
+        a função continue mantém o laço, não o avança, seguindo para uma
+        próxima interação
+        */
+
+        int cont = 0,
+            mark = 1,
+            esc;
+
+
+        printf("\n\nO loop inicia agora, pressione 1 para BREAK, ou 2 para CONTINUE");
+        printf("\n\nCaso nenhuma das opcoes seja escolhida, o loop contara infinitamente ");
+
+        while(mark==1){
+            printf("\n numero atual = %d",cont);
+            printf("\n------digite 1 para BREAK e 2 para CONTINUE-----");
+            scanf("%d", &esc);
+            if(esc==1){
+                break;
+            }
+            if(esc==2){
+                continue;
+            }
+            cont++;
+        }
+
+    }
+    void exi(){
+        int fim;
+
+        /*a função exit tem como objetivo a finalização imediata da aplicação,
+        similar ao return 0 de main, a função exit permite o retorno do dado
+        especificado entre parenteses: */
+
+        printf("-----esta funcao encerra o programa, sem retornar ao menu inicial.-----\n");
+        printf("digite um numero, e o mesmo sera utilizado como o return do fim do programa MAIN\n");
+        scanf("%d", &fim);
+
+        exit(fim);
+    }
+
+    int escolha;
+
+    while(escolha!=9){
+            int nA,
+                nB;
+            printf("\nO programa a seguir tem como objetivo a demonstracao mediante codigo\n");
+            printf("\nDas funcoes :\n1 return \n2 goto \n3 break e continue \n4 exit");
+            printf("\nEscolha a funcao desejada (digite 9 para sair): ");
+            scanf("%d", &escolha);
+            switch(escolha){
+                case 1:
+                    printf("\nA funcao a seguir retornara a soma de dois valores, A e B:");
+                    printf("\nPor favor, digite os numeros solicitados em sequencia : \n");
+                    scanf("%d %d", &nA, &nB);
+                    printf("\n a soma de %d e %d e igual a %d", nA, nB, rtrn(nA,nB));
+                    inicio();
+                    break;
+                case 2:
+                    gt();
+                    inicio();
+                    break;
+                case 3:
+                    brkCtn();
+                    inicio();
+                    break;
+                case 4:
+                    exi();
+                    break;
+                case 9:
+                    printf("\nsaindo do programa ... \n");
+                    break;
+                default:
+                    printf("\nopcao invalida");
+            }
+    }
+    return 0;
+}
+
