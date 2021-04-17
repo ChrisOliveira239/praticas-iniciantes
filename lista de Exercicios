@@ -1,0 +1,281 @@
+/*-------------------------------------------------------------------------------------
+1. Escreva um programa para ler, calcular e escrever a média aritmética entre dois
+números*/
+/*
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    int num1,
+        num2;
+    printf("escreva o primeiro numero sem virgulas : ");
+    scanf("%d",&num1);
+    printf("escreva o segundo numero sem virgulas : ");
+    scanf("%d",&num2);
+    printf("a média entre %d e %d = %d", num1, num2, (num1+num2)/2);
+    return 0;
+}
+--------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------
+2. Faça um programa para ler dois valores (x e y), calcular e mostrar x elevado à
+potência de y.
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main(){
+    int num1,
+        num2,
+        numP;
+    printf("escreva o primeiro numero sem virgulas : ");
+    scanf("%d",&num1);
+    printf("escreva o segundo numero sem virgulas : ");
+    scanf("%d",&num2);
+    numP = pow(num1,num2);
+    printf("%d elevado a %d = %d", num1, num2, numP);
+    return 0;
+--------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------
+3 Faça um programa que leia dois números reais e em seguida mostre: a soma, o
+produto, a divisão e a subtração entre eles
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main(){
+    int num1,
+        num2;
+        printf("insira o primeiro numero real : ");
+        scanf("%d", &num1);
+        printf("insira o segundo numero real : ");
+        scanf("%d", &num2);
+
+        printf("soma = %d, produto = %d, divisão = %d, subtracao = %d",
+                (num1 + num2), (num1*num2), (num1/num2), (num1-num2));
+    return 0;
+}
+
+--------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------
+4 Faça um programa no qual o usuário fornece os valores de temperatura em Fahrenheit
+e o mesmo converte os valores para Celsius Apresente o resultado. (pesquise a fórmula)
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main(){
+    float faren;
+
+    printf("insira a temperatura em Farenheit : ");
+    scanf("%f", &faren);
+    printf("a temperatura atual em Celcius é de %.1f ", (faren-32)/1.8);
+
+    return 0;
+}
+--------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------
+5. Elaborar um programa que calcule e apresente o volume de uma caixa retangular,
+pormeio da fórmula:
+VOLUME = COMPRIMENTO * LARGURA * ALTURA
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main(){
+    int comp,
+        alt,
+        larg;
+
+    printf("Digite o comprimento : ");
+    scanf("%d", &comp);
+    printf("Digite a altura : ");
+    scanf("%d", &alt);
+    printf("Digite a largura : ");
+    scanf("%d", &larg);
+    printf("o volume e de %d m3 : ", (comp*alt*larg) );
+    return 0;
+}
+
+--------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------
+6. Elaborar um programa para efetuar o cálculo do valor de uma prestação em atraso,utilizando a fórmula:
+PRESTACAO = VALOR + (VALOR*(TAXA/100)*TEMPO)
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main(){
+    int vlr,
+        txa,
+        tmp;
+
+    printf("Digite o valor");
+    scanf("%d", &vlr);
+    printf("Digite a taxa");
+    scanf("%d", &txa);
+    printf("Digite o tempo (em meses) :");
+    scanf("%d", &tmp);
+    printf("preco final : %d", vlr+(vlr*(txa/100)*tmp) );
+    return 0;
+}
+--------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------
+7. Faça um programa para ler um valor (olado de um quadrado), calcular e mostrar a
+respectiva área do quadrado.
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main(){
+    int vlr;
+
+    printf("Digite o valor do lado do quadrado");
+    scanf("%d", &vlr);
+    printf("a area do quadrado e %d", vlr*vlr);
+
+    return 0;
+}
+--------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------
+8. Sabendo que a área de um triângulo é a medida da sua base multiplicada pela medida
+de sua altura dividida por dois. Escreva um programa que peça os valores da base e da altura
+e forneça aárea do triângulo
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+
+int main(){
+    int base,
+        altura;
+
+    printf("defina a base do triangulo : ");
+    scanf("%d",&base);
+    printf("defina a altura do triangulo : ");
+    scanf("%d",&altura);
+    printf("a área do triangulo é de %d ", ((base*altura)/2));
+
+
+    return 0;
+}
+
+--------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------
+9. Faça um programa para ler dois valores (altura e raio de um cilindro), calcular e
+mostrar o respectivo volume do cilindro. (pesquise a fórmula)
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+
+int main(){
+    float
+        raio,
+        altura,
+        volume,
+        pi = 3.14;
+
+
+    printf("defina o raio do cilindro : ");
+    scanf("%f", &raio);
+    printf("defina a altura do cilindro : ");
+    scanf("%f", &altura);
+    printf("raio  = %f \nAltura = %f\n", raio, altura);
+
+    volume = pi*(raio*raio)*altura;
+
+    printf("Volume = %2.f ", volume);
+
+
+    return 0;
+}
+--------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------
+10. Escrever um programa para ler 4 valores, calcular e mostrar a média ponderada
+obtida por um aluno para 2 notas bimestrais. Note que desses 4 valores lidos tem-se o
+seguinte: duas notas e os dois respectivos pesos das notas. (pesquise a fórmula).
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+
+int main(){
+    float
+        nota1,
+        nota2,
+        mediaP;
+    int
+        peso1,
+        peso2;
+
+    printf("digite a primeira nota (com ponto) = ");
+    scanf("%f", &nota1);
+    printf("digite o peso para esta nota = ");
+    scanf("%d", &peso1);
+    printf("digite a segunda nota (com ponto) = ");
+    scanf("%f",&nota2);
+    printf("digite o peso da segunda nota = ");
+    scanf("%d", &peso2);
+
+    mediaP=((nota1*peso1)+(nota2*peso2))/(peso1+peso2);
+    printf("media ponderada = %2.f", mediaP);
+
+
+
+    return 0;
+--------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------
+Escreva um programa que calcule o consumo de combustível de um automóvel em
+Km/L, e o informe na tela.
+Dados:
+KI  = Quilometragem inicial
+KF = Quilometragem final
+CC = Consumo de combustível (nº de litros)
+DP = Distância percorrida
+GC = Gasto de combustível
+DP =  KF - KI
+GC = DP / CC
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+
+int main(){
+    int
+        kmIni,
+        kmFim,
+        cons,
+        dist,
+        gast;
+
+
+    printf("insira a quilometragem inicial sem virgulas = ");
+    scanf("%d", &kmIni);
+    printf("insira a quilometragem final sem virgulas = ");
+    scanf("%d", &kmFim);
+    printf("insira o consumo (km por litro)");
+    scanf("%d", &cons);
+
+    dist = kmFim-kmIni;
+    gast = dist / cons;
+
+    printf("KI = %d \nKF = %d\nCC = %d\nDP = %d\nGC =%d",kmIni,kmFim,cons,dist,gast);
+
+
+    return 0;
+}
+--------------------------------------------------------------------------------------*/
