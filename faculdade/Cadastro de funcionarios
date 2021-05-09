@@ -1,0 +1,386 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct fichaFuncionario{                //criando struct
+        int
+            codigo,
+            ano,
+            mes[12][31],
+            FLAG,
+            valHora;
+        char
+            nome[40],
+            cargo[40];
+
+    } funcionario[50];
+
+void menuDeEscolha(int x){              //Função do menu
+    switch (x){
+        case 1:
+            cadastroFun();
+            break;
+        case 2:
+            inserirHoras();
+            break;
+        case 3:
+            salario();
+            break;
+        case 4:
+            mostrar();
+            break;
+        case 5:
+            alterar();
+            break;
+        case 6:
+            excluir();
+            break;
+        case 7:
+            printf("Tenha um bom dia!");
+            break;
+        default:
+            printf("Escolha invalida, tente novamente");
+            break;
+    }
+}
+
+
+void cadastroFun(){                     //função de cadastro
+    int
+        escolha = 0;
+
+    printf("\nEscolha um codigo para CADASTRO: ");
+    scanf("%d", &escolha);
+    fflush(stdin);
+
+    if(funcionario[escolha].FLAG==1){
+        printf("CODIGO JA CADASTRADO != %s\n\n", &funcionario[escolha].nome);
+        system("pause");
+    }else{
+        printf("Nome = ");
+        gets(funcionario[escolha].nome);
+        fflush(stdin);
+        printf("Ano = ");
+        scanf("%d", &funcionario[escolha].ano);
+        fflush(stdin);
+        printf("Cargo = ");
+        gets(funcionario[escolha].cargo);
+        printf("Valor Hora = ");
+        scanf("%d", &funcionario[escolha].valHora);
+        funcionario[escolha].FLAG=1;
+    }
+
+}
+
+
+void inserirHoras(){                    //inserção de horas
+    int
+        cod,
+        valor;
+    char
+        escolha;
+
+    printf("Digite o codigo do funcionario\n");
+    scanf("%d", &cod);
+
+    if(funcionario[cod].FLAG==0){
+        printf("FUNCIONARIO NAO CADASTRADO\n");
+    }else{
+        fflush(stdin);
+        printf("Deseja inserir as horas de %s ?\n [s]im, [n]ao\n", funcionario[cod].nome);
+        scanf("%c", &escolha);
+        if(escolha=='s'){
+            printf("escolha o mes desejado (1 a 12): \n");
+            scanf("%d", &valor);
+
+            horasDia(cod, valor);
+        }
+    }
+
+}
+
+void horasDia(int cod, int mes){        //inserção de horas função complementar 1
+     switch(mes){
+            case 1:
+                printf("digite as horas do mes de Janeiro \n");
+                horasEspecificas(cod, mes);
+                break;
+            case 2:
+                printf("digite as horas do mes de Fevereiro \n");
+                horasEspecificas(cod, mes);
+                break;
+            case 3:
+                printf("digite as horas do mes de Marco \n");
+                horasEspecificas(cod, mes);
+                break;
+            case 4:
+                printf("digite as horas do mes de Abril \n");
+                horasEspecificas(cod, mes);
+                break;
+            case 5:
+                printf("digite as horas do mes de Maio \n");
+                horasEspecificas(cod, mes);
+                break;
+            case 6:
+                printf("digite as horas do mes de Junho \n");
+                horasEspecificas(cod, mes);
+                break;
+            case 7:
+                printf("digite as horas do mes de Julho \n");
+                horasEspecificas(cod, mes);
+                break;
+            case 8:
+                printf("digite as horas do mes de Agosto \n");
+                horasEspecificas(cod, mes);
+                break;
+            case 9:
+                printf("digite as horas do mes de Setembro \n");
+                horasEspecificas(cod, mes);
+                break;
+            case 10:
+                printf("digite as horas do mes de Outubro \n");
+                horasEspecificas(cod, mes);
+                break;
+            case 11:
+                printf("digite as horas do mes de Novembro \n");
+                horasEspecificas(cod, mes);
+                break;
+            case 12:
+                printf("digite as horas do mes de Dezembro \n");
+                horasEspecificas(cod, mes);
+                break;
+            default:
+                printf("ERRO: mês inválido!!\n\n");
+            }
+}
+
+void horasEspecificas(int cod, int mes){//inserção de horas função complementar 2
+        int
+            valor=0,
+            flagLocal=0;
+        char
+            escolha;
+
+        switch(mes){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+
+                do{
+                    printf("Digite um dia valido (de 1 a 31)\n");
+                    scanf("%d", &valor);
+                    if (valor<1||valor>31){
+                        printf("erro, data incorreta\n");
+                    }
+                    else{
+                        printf("digite o valor para o dia %d\n", valor);
+                        scanf("%d", &funcionario[cod].mes[mes][valor]);
+                        }
+                    fflush(stdin);
+                    printf("deseja cadastrar outro dia? \nPressione qualquer tecla para continuar e n para sair\n");
+                    scanf("%c", &escolha);
+
+                    if(escolha=='n'){
+                        flagLocal++;
+                    }
+                }while(flagLocal == 0);
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                printf("Digite um dia valido (de 1 a 30)\n");
+                scanf("%d", &valor);
+                do{
+                    if (valor<1||valor>30){
+                        printf("erro, data incorreta\n");
+                    }
+                    else{
+                        printf("digite o valor para o dia %d\n", valor);
+                        scanf("%d", &funcionario[cod].mes[mes][valor]);
+                        flagLocal++;
+                        }
+                    fflush(stdin);
+                    printf("deseja cadastrar outro dia? \nPressione qualquer tecla para continuar e n para sair\n");
+                    scanf("%c", &escolha);
+
+                    if(escolha=='n'){
+                        flagLocal++;
+                    }
+                }while(flagLocal == 0);
+                break;
+            case 2:
+                printf("Digite um dia valido (de 1 a 28)\n");
+                scanf("%d", &valor);
+                do{
+                    if (valor<1||valor>28){
+                        printf("erro, data incorreta\n");
+                        }
+                    else{
+                        printf("digite o valor para o dia %d\n", valor);
+                        scanf("%d", &funcionario[cod].mes[mes][valor]);
+                        flagLocal++;
+                        }
+                    fflush(stdin);
+                    printf("deseja cadastrar outro dia? \nPressione qualquer tecla para continuar e n para sair\n");
+                    scanf("%c", &escolha);
+
+                    if(escolha=='n'){
+                        flagLocal++;
+                    }
+                }while(flagLocal == 0);
+                break;
+        }
+}
+
+
+void salario(){                         //configuração de salario
+    int
+        cod,
+        mes,
+        soma=0;
+    float
+        total=0;
+
+    printf("\nDigite o codigo do funcionario");
+    scanf("%d",&cod);
+
+    if(funcionario[cod].FLAG==1){
+        printf("\ndigite o mes a ser somado (1 a 12): ");
+        scanf("%d", &mes);
+        if(mes<13 && mes>0){
+            for(int i=0; i<31; i++){
+                soma+=(funcionario[cod].mes[mes][i]);
+
+            };
+
+        }else{
+            printf("\nmês incorreto");
+        }
+    }else{
+        printf("\nErro: funcionario nao cadastrado");
+    }
+    printf("\n Salário de %s = R$%d,00", funcionario[cod].nome, soma*funcionario[cod].valHora);
+
+}
+
+void mostrar(){                         //listagem de funcionario, cargo
+    printf("\nFuncionarios cadastrados: ");
+    for(int i=0;i<50;i++){
+        if(funcionario[i].FLAG==1){
+            printf("\n%s, %s", funcionario[i].nome, funcionario[i].cargo);
+        }
+    }
+    printf("\n \n");
+}
+
+
+void alterar(){                         //alteraçao de itens listados em cadastro
+    int cod,
+        esc;
+
+    printf("\ndigite o codigo do funcionario: \n");
+    scanf("%d", &cod);
+
+    if(funcionario[cod].FLAG==1){
+        while(esc!=5){
+
+        printf("o que deseja alterar?\n");
+        printf("\n1-Nome\n2-cargo\n3-Ano\n4-valor hora\n5-Sair\n");
+        scanf("%d", &esc);
+
+        fflush(stdin);
+        switch(esc){
+            case 1:
+                printf("digite o novo nome para %s: ", funcionario[cod].nome);
+                gets(funcionario[cod].nome);
+                break;
+            case 2:
+                printf("digite o novo cargo para %s: ", funcionario[cod].nome);
+                gets(funcionario[cod].cargo);
+                break;
+            case 3:
+                printf("digite o novo ano para %s: ", funcionario[cod].nome);
+                scanf("%d", &funcionario[cod].ano);
+                break;
+            case 4:
+                printf("digite o novo valor/hora para %s: ", funcionario[cod].nome);
+                scanf("%d", funcionario[cod].valHora);
+                break;
+            case 5:
+                printf("retornando ao menu principal");
+                system("pause");
+                break;
+            default:
+                printf("escolha incorreta, tente novamente");
+
+        }
+        printf("\n\n");
+    }}
+
+    else{
+        printf("Usuario nao cadastrado");
+    }
+
+}
+
+
+void excluir(){                         //exclusão de cadastro
+    int
+        cod;
+    char
+        esc;
+
+    printf("\ninsira o codigo a ser excluido\n");
+    scanf("%d", &cod);
+
+    printf("deseja excluir os dados de %s ?\n[s]im\n[n]ao\n", funcionario[cod].nome);
+    fflush(stdin);
+    scanf("%c", &esc);
+
+    if(esc=='s'){
+        funcionario[cod].FLAG = 0;
+    }else{
+        if(esc!='n'){
+            printf("escolha invalida");
+        }
+    }
+
+
+}
+
+
+int main(){
+    int escolha = 0;
+
+    for(int l=0;l<50;l++){              //settando variáveis
+        funcionario[l].FLAG = 0;
+        funcionario[l].codigo = l+1;
+
+        for(int c=0; c<12;c++){                             //settando mês como zero
+            for( int l=0;c<31;c++){
+                funcionario[l].mes[c][l] = 0;
+            }
+        }
+    }
+
+    do{                                 //Menu principal
+        printf("\nEscolha a opcao desejada: \n");
+        printf("1 - Cadastrar \n");
+        printf("2 - Inserir horas trabalhadas\n");
+        printf("3 - Calcular salario\n");
+        printf("4 - Listar funcionarios cadastrados\n");
+        printf("5 - Alterar info de cadastro\n");
+        printf("6 - Excluir cadastro \n");
+        printf("7 - Sair (os dados cadastrais nao serao salvos) \n");
+        scanf("%d", &escolha);
+        menuDeEscolha(escolha);
+
+
+    }while(escolha!=7);
+
+}
